@@ -49,3 +49,25 @@ Visual comparisons are also provided throughout the notebook.
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
+
+## Results
+
+The fusion methods are compared using quantitative image quality metrics.
+The table below reports example results obtained from the notebook.
+
+| Method              | PSNR (dB) | MSE        | SAM (deg) |  SCC  |
+|---------------------|-----------|------------|-----------|-------|
+| IHS-based Fusion    | 26.82     | 0.002078   |   4.87    | 0.996 |
+| IHS-like Baseline   | 21.36     | 0.007305   |   5.04    | 0.988 |
+| Brovey Transform    | 26.82     | 0.002078   |   4.87    | 0.996 |
+| Gram–Schmidt / DI   | 21.73     | 0.006708   |   5.14    | 0.996 |
+| Hybrid (IHS+Brovey) | 26.82     | 0.002078   |   4.87    | 0.996 |
+
+Overall observations:
+- **IHS-based methods** better preserve color information.
+- **Brovey** provides stronger spatial enhancement at the cost of spectral distortion.
+- **Hybrid fusion** balances sharpness and color fidelity.
+
+<Figure size 1800x600 with 4 Axes><img width="1415" height="345" alt="image" src="https://github.com/user-attachments/assets/360093aa-d6cc-41bc-ab64-6e980449d160" />
+<Figure size 1500x500 with 3 Axes><img width="1151" height="427" alt="image" src="https://github.com/user-attachments/assets/3d9f981a-490d-4378-8423-1eadeb36d01a" />
+
